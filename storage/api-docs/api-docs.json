@@ -1,0 +1,638 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "description": "Документация сервиса.",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://my-default-host.com",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "api/album/": {
+            "get": {
+                "tags": [
+                    "Album"
+                ],
+                "summary": "Альбомы",
+                "description": "Возвращаются все альбомы",
+                "operationId": "78e73d394629fa0e41c3d0f2939743f6",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Album"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Album"
+                ],
+                "summary": "Альбомы",
+                "description": "Создаёт новый альбом",
+                "operationId": "ecfee6a36c304a1c4fb56a3e276dacdc",
+                "parameters": [
+                    {
+                        "name": "track_id",
+                        "in": "query",
+                        "description": "Id песен",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Название альбома",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "release",
+                        "in": "query",
+                        "description": "Дата издания",
+                        "required": false,
+                        "schema": {
+                            "type": "date"
+                        }
+                    },
+                    {
+                        "name": "Author_id",
+                        "in": "query",
+                        "description": "Id Автора",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "order_number",
+                        "in": "query",
+                        "description": "Порядковые номера песен",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/album/{id}": {
+            "put": {
+                "tags": [
+                    "Album"
+                ],
+                "summary": "Альбомы",
+                "description": "Создаёт новый альбом",
+                "operationId": "7fa928a951eb3ce88e43cc00bc6a6be6",
+                "parameters": [
+                    {
+                        "name": "track_id",
+                        "in": "query",
+                        "description": "Id песен",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Название альбома",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "release",
+                        "in": "query",
+                        "description": "Дата издания",
+                        "required": false,
+                        "schema": {
+                            "type": "date"
+                        }
+                    },
+                    {
+                        "name": "Author_id",
+                        "in": "query",
+                        "description": "Id Автора",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "order_number",
+                        "in": "query",
+                        "description": "Порядковые номера песен",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Album"
+                ],
+                "summary": "Альбомы",
+                "description": "Создаёт новый альбом",
+                "operationId": "ebfdeadd046d2a28784dd0bdacb91a02",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/author/": {
+            "get": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Авторы",
+                "description": "Возвращаются всех исполнителей",
+                "operationId": "e25ef564d0a24c997c1d12af2d9edc30",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Author"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Авторы",
+                "description": "Создание автора",
+                "operationId": "59097c7f435271c9a0dc40774c78922d",
+                "parameters": [
+                    {
+                        "name": "initials",
+                        "in": "query",
+                        "description": "Имя исполнителя",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Author"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/author/{id}": {
+            "put": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Авторы",
+                "description": "Меняет исполнителя",
+                "operationId": "dc664ee0f34f80dbd2f2ca82f4541c9b",
+                "parameters": [
+                    {
+                        "name": "initials",
+                        "in": "query",
+                        "description": "Имя исполнителя",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Id",
+                        "in": "query",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Author"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Авторы",
+                "description": "удаляет исполнителя",
+                "operationId": "5624e471a45bccf1ec1f9bf5917c16ce",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Author"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/reletionauthor/": {
+            "get": {
+                "tags": [
+                    "Author"
+                ],
+                "summary": "Авторы",
+                "description": "Возвращаются исполнителя с его альбомами",
+                "operationId": "3a2c6e6527613e3ef231c1cabc86c1c4",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Author"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/track/": {
+            "get": {
+                "tags": [
+                    "Track"
+                ],
+                "summary": "Песни",
+                "description": "Возвращаются все песни",
+                "operationId": "cc9a1a0473e3f8f831ab4cf07b9980fd",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Track"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Track"
+                ],
+                "summary": "Треки",
+                "description": "Создание песни",
+                "operationId": "f1d7bd80a420a6ba29e339e454537d74",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Название песни",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Track"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        },
+        "api/track/{id}": {
+            "put": {
+                "tags": [
+                    "Track"
+                ],
+                "summary": "Песня",
+                "description": "Меняет трэк",
+                "operationId": "8f7c58e82b6f13c5aa494586e2bc8dd7",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Название песни",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Id",
+                        "in": "query",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Track"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Track"
+                ],
+                "summary": "Песни",
+                "description": "Удаляет песню",
+                "operationId": "63fc68c742b5ffb22d1a7613f31f8e3a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Track"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Album": {
+                "title": "Album",
+                "description": "Album model",
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Название альбома",
+                        "type": "string",
+                        "format": "string",
+                        "example": "Lorelie"
+                    },
+                    "release": {
+                        "title": "release",
+                        "description": "Дата выхода альбома",
+                        "type": "string",
+                        "format": "date",
+                        "example": "1992-01-20"
+                    },
+                    "author_id": {
+                        "title": "author_id",
+                        "description": "Автор альбома",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Album"
+                }
+            },
+            "Author": {
+                "title": "Author",
+                "description": "Author model",
+                "properties": {
+                    "initials": {
+                        "title": "initials",
+                        "description": "Название альбома",
+                        "type": "string",
+                        "format": "string",
+                        "example": "Joe Cocker"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Author"
+                }
+            },
+            "Track": {
+                "title": "Песня",
+                "description": "Track model",
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Название альбома",
+                        "type": "string",
+                        "format": "string",
+                        "example": "Daddy"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "Песня"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Track",
+            "description": "Песни"
+        },
+        {
+            "name": "Album",
+            "description": "Альбомы"
+        },
+        {
+            "name": "Author",
+            "description": "Исполнители"
+        },
+        {
+            "name": "Order",
+            "description": "Получение порядквого номера трека в альбоме"
+        }
+    ]
+}

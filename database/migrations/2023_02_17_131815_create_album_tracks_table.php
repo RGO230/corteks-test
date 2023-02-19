@@ -18,7 +18,7 @@ class CreateAlbumTracksTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('album_id');
             $table->unsignedBigInteger('track_id');
-            $table->unsignedInteger('order_number');
+            $table->integer('order_number');
             $table->foreign('album_id')->references('id')->on('albums')->onDelete('cascade');
             $table->foreign('track_id')->references('id')->on('tracks')->onDelete('cascade');
         });

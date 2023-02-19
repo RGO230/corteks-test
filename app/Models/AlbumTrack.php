@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AlbumTrack extends Model
 {
+    public $table = "album_track";
     use HasFactory;
-    protected $fillable = ['track_id','album_id','order_number'];
+    protected $fillable = ['track_id','album_id'];
 }

@@ -32,7 +32,6 @@ Route::put('/album/{id}', [App\Http\Controllers\AlbumController::class, 'update'
 Route::delete('/album/{id}', [App\Http\Controllers\AlbumController::class, 'delete']);
 Route::get('/album/', [App\Http\Controllers\AlbumController::class, 'retrieve']);
 
-Route::post('/trackwithalbum/',[App\Http\Controllers\AlbumTrackController::class,'create']);
 
 Route::get('/reletionauthor/', [App\Http\Controllers\AuthorController::class,'withAlbum']);
 

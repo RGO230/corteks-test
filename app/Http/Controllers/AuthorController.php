@@ -133,7 +133,7 @@ class AuthorController extends Controller
         $request->validate([
             'initials'=>'required|string',
         ]);
-        return Author::where('id',$author->id)->update($request->all());
+        return response()->json(Author::where('id',$author->id)->update($request->all()));
     }
      /**
      * @OA\Delete(

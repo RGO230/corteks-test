@@ -215,7 +215,7 @@ class AlbumController extends Controller
 
         Album::where('id', $request->id)->update(['title'=>$request->title,'release'=>$request->release,'author_id'=>$request->author_id]);
         AlbumTrack::where('album_id',$request->id)->update(['track_id'=>$request->track_id,'order_number'=>$request->order_number]);
-        return response("Альбом изменен");
+        return response()->json("Альбом изменен");
     }
    /**
      * @OA\Delete(
